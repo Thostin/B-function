@@ -86,12 +86,15 @@ void read_primes(void) {
 }
 
 type_frac f(type_frac a) {
+  if (1 == a)
+    return 0;
   type_frac sum = 0;
   long lim = sqrt(a);
+  /*
   if (lim > primes_how) {
     printf("We just don't have such amount of primes\n");
     exit(1);
-  }
+  }*/
   long div;
   long stat;
   char band = 1; // Is prime for now
@@ -163,6 +166,7 @@ void B(const struct frac rat) {
       return;
     case 2: // I think this is actually impossible
       printf("Goes down to zero\n");
+      return;
     }
     ++steps;
   }
